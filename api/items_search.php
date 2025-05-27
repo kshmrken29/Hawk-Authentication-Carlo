@@ -27,6 +27,12 @@ if (!isset($_GET['q']) || empty($_GET['q'])) {
 
 $search_query = '%' . $_GET['q'] . '%';
 
+// Require Hawk authentication
+$user_id = verifyHawkAuthentication();
+if (!$user_id) {
+    sendResponse('error', 'Invalid Hawk authentication. Please login first.');
+}
+
 // Create database connection
 $database = new Database();
 $conn = $database->getConnection();

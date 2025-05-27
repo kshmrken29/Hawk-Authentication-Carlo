@@ -56,7 +56,13 @@ $check_result = $check_stmt->get_result();
 
 // If the Hawk ID is not in the revoked_tokens table, the user is already logged in
 if ($check_result->num_rows === 0) {
-    sendResponse('error', 'User already logged in. Please logout first before logging in again.');
+    sendResponse('error', 'User already logged in. Please logout first before logging in again.', [
+        'id' => $user['id'],
+        'username' => $user['username'],
+        'hawk_id' => $user['hawk_id'],
+        'hawk_key' => $user['hawk_key'],
+        'hawk_algorithm' => $user['hawk_algorithm']
+    ]);
 }
 $check_stmt->close();
 
