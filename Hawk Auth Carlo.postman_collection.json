@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "bb031409-27a4-489b-a665-1dc5babcd13a",
+		"name": "Hawk Auth Carlo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34105247"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"username\": \"user1\",\r\n    \"email\": \"user1@gmail.com.com\",\r\n    \"password\": \"123\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "8aeff3bd77b6a3bb3968daf0a27b27a4e414779fc37aa807d8bcf5d9c8c77e15",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_47ec93380922e420",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"username\": \"user1\",\r\n    \"password\": \"123\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET INDIVIDUAL",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/items?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"items"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"name\": \"Item 3\",\r\n    \"description\": \"Item Description 3\",\r\n    \"price\": 100\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"name\": \"Item 3.1\",\r\n    \"description\": \"Item Description 3.1\",\r\n    \"price\": 101\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/items?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"items"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/items?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"items"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCH TERM",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authKey",
+							"value": "861c5a28f8f5a9ea9e603cebc984582897c6c97ff7444e0c513031a003737297",
+							"type": "string"
+						},
+						{
+							"key": "authId",
+							"value": "hawk_3b0bbff7a88b7e9c",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/Hawk-Authentication-Carlo/api/items/search?q=Updated Name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Hawk-Authentication-Carlo",
+						"api",
+						"items",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Updated Name"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
